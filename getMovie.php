@@ -10,7 +10,7 @@ if($id == null)
 else{
     $valid = true;
 
-    $url = file_get_contents("http://www.omdbapi.com/?i=$id&apikey=51110af3&plot=short&r=json", true);
+    $url = file_get_contents("http://www.omdbapi.com/?i=$id&apikey=&plot=short&r=json", true);
     
     $json = json_decode($url,true);
     

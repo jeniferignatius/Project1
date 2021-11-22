@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
             $name = $nameString;
         }
 
-        $url = file_get_contents("http://www.omdbapi.com/?s=$name&apikey=51110af3&y=&plot=short&r=json", true);
+        $url = file_get_contents("http://www.omdbapi.com/?s=$name&apikey=&y=&plot=short&r=json", true);
 
         $json = json_decode($url);
 
