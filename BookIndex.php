@@ -26,7 +26,6 @@ if(isset($_POST["submit"])){
            $name = $nameString; 
         }
         
-        //$url = file_get_contents("http://openlibrary.org/api/books?bibkeys=ISBN:'.$name.'&format=json&jscmd=data", true);
         $url = file_get_contents("https://openlibrary.org/search.json?title=$name", true);
         
         $json = json_decode($url);
@@ -105,11 +104,14 @@ if(isset($_POST["submit"])){
                                 <tr>
                                     <td class="imdbID">
                                         <?php
-                                            echo "<a href=\"getBook1.php?id=$book->key\">$book->key</a>";
+                                            echo $book->key; 
                                         ?></td>
                                     <td>
                                         <?php 
-                                            echo $book->isbn[0]; 
+                                              $arr = $book->isbn[0];
+                                              //$book1 = json_encode($arr);
+                                              echo "<a href=\"getBook.php?id=$arr\">$arr</a>";
+                                            //echo $book->isbn[0]; 
                                         ?>
                                     </td>
                                     <td>

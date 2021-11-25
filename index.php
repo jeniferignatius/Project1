@@ -22,9 +22,11 @@ if (isset($_POST["submit"])) {
         }
 
         $url = file_get_contents("http://www.omdbapi.com/?s=$name&apikey=&y=&plot=short&r=json", true);
-
+       
         $json = json_decode($url);
-
+        echo "<pre>";
+        print_r($json);
+        echo "</pre>";
         $jsonError = json_decode($url, true);
 
         if ($jsonError['Response'] == "False") {
@@ -54,7 +56,7 @@ if (isset($_POST["submit"])) {
 <body>
     <div class="container" style="mask-image: url('poster.jpg');">
         <div class="jumbotron">
-        <a href="BookIndex1.php"><h2 style="float:right">Book Search<i class="fa fa-search" aria-hidden="true">&nbsp;</i></h2></a>
+        <a href="BookIndex.php"><h2 style="float:right">Book Search<i class="fa fa-search" aria-hidden="true">&nbsp;</i></h2></a>
             <h1>Movie Search<i class="fa fa-search" aria-hidden="true">&nbsp;</i></h1>
             <form name="movieSearch" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
                 <label id="errorMessage" class="errMsg">
