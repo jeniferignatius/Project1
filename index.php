@@ -24,9 +24,9 @@ if (isset($_POST["submit"])) {
         $url = file_get_contents("http://www.omdbapi.com/?s=$name&apikey=&y=&plot=short&r=json", true);
        
         $json = json_decode($url);
-        echo "<pre>";
-        print_r($json);
-        echo "</pre>";
+        //echo "<pre>";
+        //print_r($json);
+        //echo "</pre>";
         $jsonError = json_decode($url, true);
 
         if ($jsonError['Response'] == "False") {
