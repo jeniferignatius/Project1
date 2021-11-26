@@ -69,6 +69,7 @@ if(isset($_POST["submit"])){
     <body>
         <div class="container">
             <div class="jumbotron">
+                <a href="index.php"><h2 style="float:right">Movie Search<i class="fa fa-search" aria-hidden="true">&nbsp;</i></h2></a>
                 <h1>Book Search<i class="fa fa-search" aria-hidden="true">&nbsp;</i></h1>
                 <form name="bookSearch" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
                     <label id="errorMessage" class="errMsg">
